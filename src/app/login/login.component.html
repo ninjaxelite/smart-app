@@ -1,0 +1,14 @@
+<div>
+    <h2>Login</h2>
+    <form name="form" class="col-lg-6 col-md-3">
+        <div class="form-group">
+            <input type="text" pInputText name="user-name" placeholder="Vorname Nachname" [(ngModel)]="model.username" #username="ngModel" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="password" pPassword placeholder="Kennwort" name="password" [(ngModel)]="model.password" #password="ngModel" class="form-control" />
+        </div>
+        <div class="form-group">
+            <button pButton type="button" (click)="login()" [disabled]="loading" label="Login" class="ui-button-success"></button>
+        </div>
+    </form>
+</div>

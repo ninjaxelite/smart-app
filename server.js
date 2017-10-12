@@ -15,6 +15,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/primeng', express.static(__dirname + '/node_modules/primeng/resources/'));
+app.use('/fontawesome', express.static(__dirname + '/node_modules/font-awesome/css/'));
+app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/'));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/popperjs', express.static(__dirname + '/node_modules/popper.js/dist/umd/'));
+app.use('/tooltipjs', express.static(__dirname + '/node_modules/tooltip.js/dist/umd/'));
 
 // Set our api routes
 app.use('/api', api);
