@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuthenticationService } from '../authentication/authentication.service';
@@ -10,7 +10,7 @@ import { ButtonModule } from 'primeng/primeng';
     styleUrls: ['login.component.css']
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
     model: any = {};
     loading = false;
     returnUrl: string;
@@ -26,6 +26,14 @@ export class LoginComponent implements OnInit {
 
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+        let body = document.getElementsByTagName('body')[0];
+        body.classList.add("background");
+    }
+
+    ngOnDestroy() {
+      let body = document.getElementsByTagName('body')[0];
+      body.classList.remove("background");
     }
 
     login() {
