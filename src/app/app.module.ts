@@ -13,12 +13,18 @@ import { Routing } from './app.routing';
 import { AuthGuard }  from './guard/auth.guard';
 import { AuthenticationService } from './authentication/authentication.service';
 import { ButtonModule } from 'primeng/primeng';
+import { MegaMenuModule } from 'primeng/primeng';
+import { MenuComponent } from './menu/menu.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,8 @@ import { ButtonModule } from 'primeng/primeng';
     FormsModule,
     HttpModule,
     Routing,
-    ButtonModule
+    ButtonModule,
+    MegaMenuModule
   ],
   providers: [
     AuthGuard,
