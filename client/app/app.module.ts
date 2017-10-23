@@ -10,10 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
 import { Routing } from './app.routing';
-import { AuthGuard }  from './guard/auth.guard';
+import { AuthGuard } from './guard/auth.guard';
 import { AuthenticationService } from './authentication/authentication.service';
-import { ButtonModule } from 'primeng/primeng';
-import { MegaMenuModule } from 'primeng/primeng';
 import { MenuComponent } from './menu/menu.component';
 
 
@@ -31,9 +29,7 @@ import { MenuComponent } from './menu/menu.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    Routing,
-    ButtonModule,
-    MegaMenuModule
+    Routing
   ],
   providers: [
     AuthGuard,
