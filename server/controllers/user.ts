@@ -1,9 +1,7 @@
 import * as dotenv from 'dotenv';
 import * as jwt from 'jsonwebtoken';
 
-import BaseCtrl from './base';
-
-export default class UserCtrl extends BaseCtrl {
+export default class UserCtrl {
 
   login = (req, res) => {
     res.send(JSON.stringify({
