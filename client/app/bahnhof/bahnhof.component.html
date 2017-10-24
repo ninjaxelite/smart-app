@@ -1,15 +1,14 @@
 <menu></menu>
-<div class="container">
-
-  <div class="panel">
+<div class="container" style="margin-top: 75px;">
+  <div class="panel panel-default">
     <div class="panel-heading">Info</div>
     <div class="panel-body">
       <div class="col-lg-9 col-md-6">
-        <table class="table">
+        <table *ngIf="bahnhof" class="table">
           <tbody>
             <tr>
               <td>Region / Adresse</td>
-              <td>B</td>
+              <td *ngFor="let b of bahnhof.region">{{b.label}}</td>
             </tr>
             <tr>
               <td>Kategorie</td>
@@ -24,5 +23,4 @@
       </div>
     </div>
   </div>
-
 </div>

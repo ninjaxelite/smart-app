@@ -6,7 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
+import { BahnhofComponent } from './bahnhof/bahnhof.component';
+import { BahnhofService } from './bahnhof/bahnhof.service';
 import { LoginComponent } from './login/login.component';
 
 import { Routing } from './app.routing';
@@ -14,13 +15,10 @@ import { AuthGuard } from './guard/auth.guard';
 import { AuthenticationService } from './authentication/authentication.service';
 import { MenuComponent } from './menu/menu.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    BahnhofComponent,
     LoginComponent,
     MenuComponent
   ],
@@ -33,7 +31,8 @@ import { MenuComponent } from './menu/menu.component';
   ],
   providers: [
     AuthGuard,
-    AuthenticationService
+    AuthenticationService,
+    BahnhofService
   ],
   bootstrap: [AppComponent]
 })
