@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
-import { Bahnhof } from './bahnhof';
+import { Bahnhof } from '../bahnhof';
 
 @Injectable()
 export class BahnhofService {

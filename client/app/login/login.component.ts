@@ -6,7 +6,8 @@ import { AuthenticationService } from '../authentication/authentication.service'
 @Component({
     moduleId: module.id,
     templateUrl: 'login.component.html',
-    styleUrls: ['login.component.css']
+    styleUrls: ['login.component.css'],
+    providers:[AuthenticationService]
 })
 
 export class LoginComponent implements OnInit, OnDestroy {

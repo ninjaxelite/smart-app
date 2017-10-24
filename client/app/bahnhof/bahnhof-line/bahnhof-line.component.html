@@ -1,0 +1,5 @@
+<div *ngIf="data">
+    <span class="{{getTypeIcon(data.type)}}"></span>
+    <span *ngIf="data.url != ''"><a href="{{data.url}}">{{data.label}}</a></span>
+    <span *ngIf="data.url == ''">{{data.label}}</span>
+</div>

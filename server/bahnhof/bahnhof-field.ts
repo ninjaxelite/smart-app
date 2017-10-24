@@ -40,6 +40,8 @@ export default class BahnhofField {
 
 export enum Type {
     address,
-    email,
-    other
+	email,
+	phone,
+	other,
+	profile
 }

@@ -1,0 +1,82 @@
+<menu></menu>
+<div class="container" style="margin-top: 75px;">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Wien Hauptbahnhof</h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-lg-12 col-md-9">
+        <table *ngIf="bahnhof && rows > 0" class="table table-hover table-responsible">
+          <tbody>
+            <tr>
+              <th scope="row">Region / Adresse</th>
+              <td *ngFor="let region of bahnhof.region">
+                <bahnhof-line [data] = "region"></bahnhof-line>
+              </td>
+              <td *ngFor="let x of createRange(bahnhof.region)">&nbsp;</td>
+              
+            </tr>
+            <tr>
+                <th scope="row">Kategorie</th>
+              <td *ngFor="let kategorie of bahnhof.kategorie">
+                  <bahnhof-line [data] = "kategorie"></bahnhof-line>
+              </td>
+              <td *ngFor="let x of createRange(bahnhof.kategorie)">&nbsp;</td>
+            </tr>
+            <tr>
+                <th scope="row">Bhf-Info</th>
+              <td *ngFor="let bhfInfo of bahnhof.bhfInfo">
+                  <bahnhof-line [data] = "bhfInfo"></bahnhof-line>
+              </td>
+              <td *ngFor="let x of createRange(bahnhof.bhfInfo)">&nbsp;</td>
+            </tr>
+            <tr>
+                <th scope="row">TL BLM</th>
+                <td *ngFor="let tlBlm of bahnhof.tlBlm">
+                    <bahnhof-line [data] = "tlBlm"></bahnhof-line>
+                </td>
+                <td *ngFor="let x of createRange(bahnhof.tlBlm)">&nbsp;</td>
+            </tr>
+            <tr>
+                <th scope="row">BLM</th>
+                <td *ngFor="let blm of bahnhof.blm">
+                    <bahnhof-line [data] = "blm"></bahnhof-line>
+                </td>
+                <td *ngFor="let x of createRange(bahnhof.blm)">&nbsp;</td>
+            </tr>
+            <tr>
+                <th scope="row">GL Sicherheit / Service</th>
+                <td *ngFor="let glSicherheitService of bahnhof.glSicherheitService">
+                    <bahnhof-line [data] = "glSicherheitService"></bahnhof-line>
+                </td>
+                <td *ngFor="let x of createRange(bahnhof.glSicherheitService)">&nbsp;</td>
+            </tr>
+            <tr>
+                <th scope="row">GL Reinigung</th>
+                <td *ngFor="let glReinigung of bahnhof.glReinigung">
+                    <bahnhof-line [data] = "glReinigung"></bahnhof-line>
+                </td>
+                <td *ngFor="let x of createRange(bahnhof.glReinigung)">&nbsp;</td>
+            </tr>
+            <tr>
+                <th scope="row">BK Sicherheit</th>
+                <td *ngFor="let bkSicherheit of bahnhof.bkSicherheit">
+                    <bahnhof-line [data] = "bkSicherheit"></bahnhof-line>
+                </td>
+                <td *ngFor="let x of createRange(bahnhof.bkSicherheit)">&nbsp;</td>
+            </tr>
+            <tr>
+                <th scope="row">BK SI Teamassistent</th>
+                <td *ngFor="let bkSiTeamasistent of bahnhof.bkSiTeamasistent">
+                    <bahnhof-line [data] = "bkSiTeamasistent"></bahnhof-line>
+                </td>
+                <td *ngFor="let x of createRange(bahnhof.bkSiTeamasistent)">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="rows == 0">No items found</div>
+        <div *ngIf="loading === true">loading</div>
+      </div>
+    </div>
+  </div>
+</div>

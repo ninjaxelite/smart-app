@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { BahnhofComponent } from './bahnhof/bahnhof.component';
+import { BahnhofComponent } from './bahnhof/bahnhof/bahnhof.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guard/auth.guard';
 

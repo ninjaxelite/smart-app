@@ -6,33 +6,33 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BahnhofComponent } from './bahnhof/bahnhof.component';
-import { BahnhofService } from './bahnhof/bahnhof.service';
+import { BahnhofComponent } from './bahnhof/bahnhof/bahnhof.component';
 import { LoginComponent } from './login/login.component';
 
 import { Routing } from './app.routing';
 import { AuthGuard } from './guard/auth.guard';
-import { AuthenticationService } from './authentication/authentication.service';
 import { MenuComponent } from './menu/menu.component';
+import { BahnhofLineComponent } from './bahnhof/bahnhof-line/bahnhof-line.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     BahnhofComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    BahnhofLineComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    Routing
+    Routing,
+    NgbModule.forRoot()
   ],
   providers: [
-    AuthGuard,
-    AuthenticationService,
-    BahnhofService
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
