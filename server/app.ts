@@ -3,6 +3,7 @@ import * as dotenv from 'dotenv';
 import * as express from 'express';
 import * as morgan from 'morgan';
 import * as path from 'path';
+import * as winston from'winston';
 
 import setRoutes from './routes';
 
@@ -26,4 +27,11 @@ if (!module.parent) {
   });
 }
 
-export { app };
+const logger = new (winston.Logger)({
+  transports: [
+    new (winston.transports.Console)(),
+    new (winston.transports.File)({ filename: 'somefile.log' })
+  ]
+});
+
+export { app, logger };

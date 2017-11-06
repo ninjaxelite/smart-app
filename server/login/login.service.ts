@@ -1,5 +1,6 @@
 import User from '../user/user';
 
+
 export default class LoginService {
 
 
@@ -8,6 +9,7 @@ export default class LoginService {
     
 
     public login(username:String, password: String) {
+        
         return new User('test.user', 'test', 'user', 'ADMIN','123-abc');
     }
 }

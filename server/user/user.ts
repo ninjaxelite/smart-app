@@ -1,10 +1,22 @@
-export default class User {
-    private username: String;
-    private firstname: String;
-    private lastname: String;
-    private role: String;
-    private token: String;
+import {Entity, Column} from "typeorm";
 
+@Entity()
+export default class User {
+
+	@Column({type: "varchar", length: 100, primary: true, unique: true})
+	private username: String;
+	
+	@Column("text")
+	private firstname: String;
+	
+	@Column("text")
+	private lastname: String;
+	
+	@Column("text")
+	private role: String;
+	
+	@Column("text")
+    private token: String;
 
 	constructor($username: String, $firstname: String, $lastname: String, $role: String, $token: String) {
 		this.username = $username;
@@ -13,8 +25,6 @@ export default class User {
 		this.role = $role;
 		this.token = $token;
 	}
-    
-
 
 	public get $username(): String {
 		return this.username;
