@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-
 import { User } from './user';
 
 @Injectable()
@@ -11,8 +10,8 @@ export class UserService {
         return this.http.get('/api/users', this.jwt()).map((response: Response) => response.json());
     }
 
-    getById(id: number) {
-        return this.http.get('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
+    getById(id: string) {
+        return this.http.get('/api/user/' + id, this.jwt()).map(response => response.json());
     }
 
     create(user: User) {
