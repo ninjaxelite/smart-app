@@ -11,13 +11,24 @@ export default class LoginCtrl {
 	}
     
 
-    login(req, res) {
+    public login = (req, res) => {
+        this.service.login(req.body.username, req.body.password).then(
+            (loggedIn) => {
+                console.log(loggedIn);
+                let user: User = new User('test.user', 'test', 'user', 'ADMIN','123-abc');
+                if (loggedIn) {
+                    res.status(200).json(user);
+                } else {
+                    res.status(404).json({});
+                }
+            }
+        ).catch(
+            (error)=>{
+                console.log(error);
+                res.status(501).json({});
+            }
+        );
         
-        let user: User = new User('test.user', 'test', 'user', 'ADMIN','123-abc');//this.service.login(req.params.username, req.params.password);
-        if (user != null) {
-            res.status(200).json(user);
-        } else {
-            res.status(404).json({});
-        }
+        
     }
 }
