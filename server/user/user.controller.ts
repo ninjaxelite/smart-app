@@ -13,7 +13,7 @@ export default class UserCtrl {
   public findUser = (req, res) => {
     this.userService.findUser(req.params.id)
       .then(user => {
-        app.logger.log('info', 'log msg 123');
+        app.log('info', 'log msg 123');
         if(user == undefined){
           res.status(404).send(null);
         }else {
@@ -27,6 +27,10 @@ export default class UserCtrl {
   }
 
   public createUser = (req, res) => {
-    this.userService.createUser(req.params).then(ok => res.send(ok));
+    this.userService.createUser(req.body).then(user => res.send(user));
+  }
+
+  public updateUser = (req, res) => {
+    this.userService.updateUser(req.body).then(user => res.send(user));
   }
 }

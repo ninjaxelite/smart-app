@@ -14,8 +14,12 @@ export default class UserService {
         return this.conn.then(async c => await c.manager.find(User));
     }
 
-    public createUser(p) {
-        return this.conn.then(async c => await c.getRepository(User).save(new User(p.username, p.firstname, p.lastname, p.role, p.token)));
+    public createUser(user): Promise<User> {
+        return this.conn.then(async c => await c.getRepository(User).save(user));
+    }
+
+    public updateUser(user): Promise<User> {
+        return this.conn.then(async c => await c.getRepository(User).save(user));
     }
 
     private handleError(error: any): Promise<any> {

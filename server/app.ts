@@ -34,4 +34,8 @@ const logger = new (winston.Logger)({
   ]
 });
 
-export { app, logger };
+function log(type: string, msg: string) {
+  logger.log(type, msg);
+}
+
+export { app, log };

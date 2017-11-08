@@ -16,12 +16,16 @@ export default function setRoutes(app) {
   // Bahnhofe
   router.route('/bahnhof/:id').get(bahnhofCtrl.findOne);
 
-  // User
+  // get User by id
   router.route('/user/:id').get(userCtrl.findUser);
 
+  // new User
   router.route('/user').post(userCtrl.createUser);
 
-  // Get all user
+  // update User
+  router.route('/user').put(userCtrl.updateUser);
+
+  // Get all users
   router.route('/users').get(userCtrl.findAllUsers);
 
   // Apply the routes to our application with the prefix /api
